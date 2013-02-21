@@ -145,6 +145,10 @@ if(NOT LIB_DIR)
 endif(NOT LIB_DIR)
 
 add_library(superlu SHARED ${SUPERLU_SRCS})
+if(APPLE)
+  target_link_libraries(superlu -Wl,-framework -Wl,Accelerate)
+endif(APPLE)
+
 set_target_properties(superlu PROPERTIES COMPILE_FLAGS "-DPRNTlevel=0 -O3")
 install(TARGETS superlu
   RUNTIME DESTINATION ${BIN_DIR}
