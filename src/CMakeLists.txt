@@ -144,7 +144,7 @@ if(NOT LIB_DIR)
   set(LIB_DIR lib)
 endif(NOT LIB_DIR)
 
-add_library(superlu STATIC ${SUPERLU_SRCS})
+add_library(superlu SHARED ${SUPERLU_SRCS})
 set_target_properties(superlu PROPERTIES COMPILE_FLAGS "-DPRNTlevel=0 -O3")
 install(TARGETS superlu
   RUNTIME DESTINATION ${BIN_DIR}
