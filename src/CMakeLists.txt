@@ -144,7 +144,7 @@ if(NOT LIB_DIR)
   set(LIB_DIR lib)
 endif(NOT LIB_DIR)
 
-add_library(superlu SHARED ${SUPERLU_SRCS})
+add_library(superlu ${SUPERLU_SRCS})
 if(APPLE)
   target_link_libraries(superlu -Wl,-framework -Wl,Accelerate)
 endif(APPLE)
