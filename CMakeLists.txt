@@ -7,6 +7,9 @@ ENDIF(COMMAND CMAKE_POLICY)
 # Set CMake project name
 PROJECT(SUPERLU)
 
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wno-write-strings -Wno-unused-result -Wno-deprecated -fPIC")
+SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -Wno-write-strings -Wno-unused-result -Wno-deprecated -fPIC")
+
 # Identify CMake directory
 set(SUPERLU_CMAKE_DIR "${SUPERLU_SOURCE_DIR}/CMake")
 if(SUPERLU_IS_SUBBUILD)
